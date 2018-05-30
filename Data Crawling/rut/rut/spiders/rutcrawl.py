@@ -10,13 +10,13 @@ class RutcrawlSpider(scrapy.Spider):
 	name = 'rutcrawl'
 	allowed_domains = ['nombrerutyfirma.cl']
 	start_urls = ['https://nombrerutyfirma.cl/rut']
-	data_dir = os.environ['AITUEDATA'] + "ruts_invalidos_scrap.csv"
+	data_dir = os.environ['AITUEDATA'] + "ruts_validos_scrap.csv"
 
 
 	def parse(self, response):
 		# return [FormRequest(url='https://nombrerutyfirma.cl/rut', formdata={"term": "18.144.865-2"}, callback=self.after_parse)]
 		
-		listarut = pd.read_csv("C:/Users/jquin/Desktop/Memoria de Titulo/Aitue/Datos/" + "ruts_validos_scrap.csv",header=None,names=['0','Rut']).drop('0',axis=1)
+		listarut = pd.read_csv(self.data_dir,header=None,names=['0','Rut']).drop('0',axis=1)
 
 		for rut in listarut['Rut']:
 			self.log("{}".format(rut))
