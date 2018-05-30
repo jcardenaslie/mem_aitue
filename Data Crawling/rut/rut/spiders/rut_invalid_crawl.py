@@ -6,25 +6,26 @@ from scrapy.http import FormRequest
 import csv
 import os
 
-class RutcrawlSpider(scrapy.Spider):
-	name = 'rutcrawl'
+class RutInvalidSpider(scrapy.Spider):
+	name = 'rut_invalid_crawl'
 	allowed_domains = ['nombrerutyfirma.cl']
 	start_urls = ['https://nombrerutyfirma.cl/rut']
-	data_dir = os.environ['AITUEDATA'] + "ruts_invalidos_scrap.csv"
+	data_dir = "C:/Users/jquin/Desktop/Memoria de Titulo/Aitue/Datos/" + " rut_to_crawl.csv"
+
 
 
 	def parse(self, response):
 		# return [FormRequest(url='https://nombrerutyfirma.cl/rut', formdata={"term": "18.144.865-2"}, callback=self.after_parse)]
 		
-		listarut = pd.read_csv("C:/Users/jquin/Desktop/Memoria de Titulo/Aitue/Datos/" + "ruts_validos_scrap.csv",header=None,names=['0','Rut']).drop('0',axis=1)
+		listarut = pd.read_csv("C:\\Users\\kuka\\Desktop\\rut\\listarut.csv", sep = ',' )
+		listarut.columns = ['0', 'RUT']
+		listarut.drop('0' , axis = 1)
 
-		for rut in listarut['Rut']:
-			self.log("{}".format(rut))
-			yield FormRequest(url='https://nombrerutyfirma.cl/rut',
+		for rut in listarut['RUT']:
+		    yield FormRequest(url='https://nombrerutyfirma.cl/rut',
 			        	formdata={"term": rut}, 
 			        	callback=self.after_parse,
 			        	dont_filter = True)
-
 
 	def after_parse(self, response):
 		
@@ -43,12 +44,14 @@ class RutcrawlSpider(scrapy.Spider):
 		comuna = response.xpath('//td')[4].extract()
 		comuna = comuna.replace('<td>',' ')
 		comuna = comuna.replace('</td>',' ')
-		self.log("{}".format(rut))
-		yield {'Name': name,
-		'RUT': rut,
+
+		yield {
+		'Name': name,
+		'Rut': rut,
 		'Gender': gender,
 		'Adress': adress,
-		'Comuna': comuna} 
+		'Comuna': comuna
+		} 
 
 
 
