@@ -1,0 +1,52 @@
+print(roc_curves_to_plot['All Proyects Experimento base']['BRF']['auc'])
+print(roc_curves_to_plot['All Proyects Experimento base_profesion']['BRF']['auc'])
+print(roc_curves_to_plot['All Proyects Experimento base_minusisprofesion']['BRF']['auc'])
+print(roc_curves_to_plot['All Proyects Experimento base_medini_isrec']['BRF']['auc'])
+
+0.9364557881205412
+0.9210741165965046
+0.9168153316258941
+0.9355068837273199
+
+
+print(roc_curves_to_plot['All Proyects NN Experimento base']['BRF']['auc'])
+print(roc_curves_to_plot['All Proyects NN Experimento base_profesion']['BRF']['auc'])
+print(roc_curves_to_plot['All Proyects NN Experimento base_minusisprofesion']['BRF']['auc'])
+print(roc_curves_to_plot['All Proyects NN Experimento base_medini_isrec']['BRF']['auc'])
+
+0.9384035326782989
+0.9315031300267409
+0.9290185752487117
+0.9301865721340532
+
+print(roc_curves_to_plot['San Andres Del Valle Experimento base']['BRF']['auc'])
+print(roc_curves_to_plot['San Andres Del Valle base_profesion']['BRF']['auc'])
+print(roc_curves_to_plot['San Andres Del Valle base_minusisprofesion']['BRF']['auc'])
+print(roc_curves_to_plot['San Andres Del Valle base_medini_isrec']['BRF']['auc'])
+
+0.9085854014341957
+0.8850841886951631
+0.8953902734814398
+0.8993975850674917
+
+print(roc_curves_to_plot['San Andres Del Valle NN base']['BRF']['auc'])
+print(roc_curves_to_plot['San Andres Del Valle NN base_profesion']['BRF']['auc'])
+print(roc_curves_to_plot['San Andres Del Valle NN base_profesion']['PRT_BLR']['auc'])
+print(roc_curves_to_plot['San Andres Del Valle NN base_minusisprofesion']['BRF']['auc'])
+print(roc_curves_to_plot['San Andres Del Valle NN base_medini_isrec']['BRF']['auc'])
+
+0.9309630332144403
+0.9054388388347112
+0.9055625425231428
+0.9193039605797578
+0.9441993278766261
+
+print(roc_curves_to_plot['Altos del Valle base']['BRF']['auc'])
+print(roc_curves_to_plot['Altos del Valle base_profesion']['BRF']['auc'])
+print(roc_curves_to_plot['Altos del Valle base_minusisprofesion']['BRF']['auc'])
+print(roc_curves_to_plot['Altos del Valle base_medini_isrec']['BRF']['auc'])
+
+0.9498456790123456
+0.9274691358024691
+0.9205246913580247
+0.9463734567901234
