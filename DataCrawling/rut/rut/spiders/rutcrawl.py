@@ -10,7 +10,7 @@ class RutcrawlSpider(scrapy.Spider):
 	name = 'rutcrawl'
 	allowed_domains = ['nombrerutyfirma.cl']
 	start_urls = ['https://nombrerutyfirma.cl/rut']
-	data_dir = os.environ['AITUEDATA'] + "ruts_validos_scrap.csv"
+	data_dir =  "../../ruts_validos_scrap.csv"
 
 
 	def parse(self, response):
